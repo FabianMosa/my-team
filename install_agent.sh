@@ -29,8 +29,8 @@ if [ ! -d "$BASE_PATH/.cursor" ]; then
   exit 1
 fi
 
-if [ ! -d "$BASE_PATH/ai-team" ]; then
-  echo "❌ Error: ai-team not found in $BASE_PATH"
+if [ ! -d "$BASE_PATH/.cursorrules" ]; then
+  echo "❌ Error: .cursorrules not found in $BASE_PATH"
   exit 1
 fi
 
@@ -41,8 +41,6 @@ fi
 
 # Crear carpetas si no existen
 mkdir -p .cursor
-mkdir -p ai-team
-mkdir -p skills
 mkdir -p .cursorrules
 
 
@@ -50,14 +48,9 @@ mkdir -p .cursorrules
 echo "📦 Copying .cursor..."
 copy_if_missing "$BASE_PATH/.cursor" ".cursor"
 
-echo "📦 Copying ai-team..."
-copy_if_missing "$BASE_PATH/ai-team" "ai-team"
 
-echo "📦 Copying skills..."
-copy_if_missing "$BASE_PATH/skills" "skills"
-
-echo "📦 Copying rules..."
-copy_if_missing "$BASE_PATH/rules" ".cursorrules"
+echo "📦 Copying cursorules..."
+copy_if_missing "$BASE_PATH/.cursorrules" ".cursorrules"
 
 
 # Validación

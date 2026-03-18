@@ -49,12 +49,12 @@ echo "📦 Copying .cursor..."
 copy_if_missing "$BASE_PATH/.cursor" ".cursor"
 
 
-echo "📦 Copying cursorules..."
+echo "📦 Copying .cursorules..."
 copy_if_missing "$BASE_PATH/.cursorrules" ".cursorrules"
 
 
 # Validación
-if [ -d ".cursor" ] && [ -d "ai-team" ]; then
+if [ -d ".cursor" ] && [ -d ".cursorrules" ]; then
   echo "✅ Installation successful"
 else
   echo "❌ Installation failed"

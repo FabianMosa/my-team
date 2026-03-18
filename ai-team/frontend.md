@@ -11,7 +11,7 @@ Rules:
 - Reusable design
 - No business logic in UI
 
-Using Engram:
+## Using Engram:
 
 BEFORE:
 → mem_search on:

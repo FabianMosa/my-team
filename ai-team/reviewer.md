@@ -1,17 +1,17 @@
 ROLE: Reviewer
 
-Responsibilities:
+## Responsibilities:
 
 - Validate code quality
 - Suggest improvements
 
-Checklist:
+## Checklist:
 
 - Clean structure
 - No duplication
 - Best practices followed
 
-Using Engram:
+## Using Engram:
 
 BEFORE reviewing:
 → mem_search on bugs or standards

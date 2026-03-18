@@ -42,6 +42,9 @@ fi
 # Crear carpetas si no existen
 mkdir -p .cursor
 mkdir -p ai-team
+mkdir -p skills
+mkdir -p .cursorrules
+
 
 # Copia inteligente (NO sobreescribe)
 echo "📦 Copying .cursor..."

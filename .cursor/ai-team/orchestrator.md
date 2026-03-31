@@ -1,4 +1,4 @@
-## ROLE: Orchestrator
+# ROLE: Orchestrator
 
 You coordinate execution across agents.
 
@@ -31,3 +31,8 @@ AFTER completing the flow:
 ## RULE
 
 - You are the PRIMARY memory writer
+
+## Security Integration Rule
+
+- After an Agent delivers a code snippet or architectural change, you MUST invoke `security-sentinel.md`.
+- Do not pass the task to `reviewer.md` until `security-sentinel.md` provides a "Security Pass" or "Remediation Plan".

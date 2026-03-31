@@ -7,6 +7,10 @@ Execution workflow:
 
 Priority order:
 
-Planner → Orchestrator → Agents → Reviewer
+Planner → Orchestrator → Agents → Securiry Sentinel → Reviewer
 
-No agent should perform tasks outside its responsibility.
+## Operational Rules
+
+- **No agent** should perform tasks outside its strictly defined responsibility.
+- **Security Checkpoint:** Any code involving API routes, Database queries, or User inputs MUST be validated by the Security Sentinel before reaching the Reviewer.
+- **Final Approval:** The Reviewer must confirm that the Sentinel's recommendations have been implemented.

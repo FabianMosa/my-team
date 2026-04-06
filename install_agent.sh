@@ -1,7 +1,26 @@
 #!/bin/bash
+<<<<<<< HEAD
 # Instala .cursor, .cursorrules, ai-team (+ STACK.md y AGENTS.md si no existen en destino).
 # Uso (desde el proyecto destino): bash /ruta/a/my-team/install_agent.sh
 # Sobrescribir archivos existentes: bash .../install_agent.sh --force
+=======
+#
+# install_agent.sh — Copia .cursor y .cursorrules de ESTE repo al proyecto destino.
+#
+# CÓMO USARLO (el destino es siempre el directorio actual de la terminal):
+#   1. cd "ruta/al/otro/proyecto"
+#   2. bash "/ruta/completa/a/my-team/install_agent.sh"
+#
+# En Windows: ejecutar desde Git Bash o WSL (PowerShell/CMD no interpretan .sh).
+# Rutas con espacios: van entre comillas en el comando bash.
+#
+# Comportamiento:
+#   - Origen: carpetas .cursor y .cursorrules junto a este script (my-team).
+#   - Destino: . (carpeta donde hiciste cd).
+#   - No sobrescribe archivos que ya existan en el destino.
+#
+# Si no hay package.json en el destino solo aparece un aviso; la copia continúa.
+>>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
 
 set -e
 
@@ -66,16 +85,25 @@ fi
 mkdir -p .cursor
 mkdir -p .cursorrules
 mkdir -p ai-team
+<<<<<<< HEAD
+=======
+
+>>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
 
 # Copia inteligente (NO sobreescribe)
 echo "📦 Copying .cursor..."
 copy_if_missing "$BASE_PATH/.cursor" ".cursor"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
 echo "📦 Copying .cursorrules..."
 copy_if_missing "$BASE_PATH/.cursorrules" ".cursorrules"
 
 echo "📦 Copying ai-team..."
 copy_if_missing "$BASE_PATH/ai-team" "ai-team"
+<<<<<<< HEAD
 
 # Documentación de equipo (no pisa si ya existe, salvo --force)
 copy_optional_root_file() {
@@ -92,6 +120,10 @@ for f in STACK.md AGENTS.md; do copy_optional_root_file "$f"; done
 
 # Validación
 if [ -d ".cursor" ] && [ -d ".cursorrules" ] && [ -d "ai-team" ]; then
+=======
+# Validación
+if [ -d ".cursor" ] && [ -d ".cursorrules" ] && [ -d "ai-team" ] ; then
+>>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
   echo "✅ Installation successful"
 else
   echo "❌ Installation failed"

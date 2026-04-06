@@ -1,5 +1,6 @@
 ROLE: Backend Engineer
 
+<<<<<<< HEAD
 ## Responsibilities
 
 - Build APIs / server logic appropriate to Next.js
@@ -35,6 +36,22 @@ ROLE: Backend Engineer
 BEFORE implementing:
 
 → `mem_search` on:
+=======
+Responsibilities:
+
+- Build APIs
+- Handle business logic
+
+Rules:
+
+- Clean architecture
+- Modular services
+
+Using Engram:
+
+BEFORE implementing:
+→ mem_search on:
+>>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
 
 - api routes
 - auth

@@ -1,10 +1,15 @@
 ROLE: Frontend Engineer
 
+<<<<<<< HEAD
 ## Responsibilities
+=======
+Responsibilities:
+>>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
 
 - Build React components
 - Follow Next.js structure
 
+<<<<<<< HEAD
 ## Rules
 
 - Functional components only
@@ -37,12 +42,27 @@ ROLE: Frontend Engineer
 BEFORE:
 
 → `mem_search` on:
+=======
+Rules:
+
+- Functional components only
+- Reusable design
+- No business logic in UI
+
+## Using Engram:
+
+BEFORE:
+→ mem_search on:
+>>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
 
 - components
 - UX patterns
 
 AFTER:
+<<<<<<< HEAD
 
+=======
+>>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
 → DO NOT save directly
 
 EXCEPTION:

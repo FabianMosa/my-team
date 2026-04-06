@@ -1,12 +1,16 @@
 All development must follow the AI Dev Team architecture.
 
-Mandatory pipeline:
+## Mandatory pipeline
 
-1. Planner defines the plan
-2. Orchestrator coordinates execution
-3. Specialized agents implement
-4. Integration merges outputs
-5. Reviewer validates and improves
+1. **Planner** defines the plan (`@planner`)
+2. **Orchestrator** coordinates execution and **logs delegation in chat** (`@orchestrator`) — see `ai-team/orchestrator.md`
+3. **Specialized agents** implement (`@ux`, `@content`, `@frontend`, `@styling`, `@backend`, `@db-dev`, …) según perfil en `STACK.md`
+4. **Integration** merges outputs (`@integration`)
+5. **Security Sentinel** audits security-sensitive changes (`@security-sentinel`)
+6. **Reviewer** validates and improves (`@reviewer`)
 
-Never skip planning.
-Never jump directly to implementation.
+## Non-negotiables
+
+- Never skip planning for non-trivial work.
+- Never jump straight to implementation without an orchestration step (matrix + next agent).
+- Never skip the Security Sentinel for sensitive surfaces (APIs, DB, auth, user input).

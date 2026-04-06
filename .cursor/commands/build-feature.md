@@ -3,23 +3,28 @@
 
 ## Description
 
-Starts the development process for a new feature using the orchestrator.
+Inicia el flujo **AI Dev Team** para una feature nueva: plan → orquestación visible → agentes especializados.
 
 ## Usage
 
-/build-feature [feature description]
+/build-feature [descripción]  
+Opcional al inicio: `Perfil activo: next-tailwind` (u otro en `STACK.md`).
 
 ## Example
 
-/build-feature create task system with basic CRUD
+/build-feature Perfil activo: next-tailwind — panel de reservas con listado y detalle
 
-## Automatic Process
+## Proceso (alineado al repo)
 
-1. The orchestrator (@orchestrator) will analyze the request
-2. It will break it down into tasks:
-   - Data model (@db-dev)
-   - API endpoints (@api-dev)
-   - Listing/creation UI (@frontend-dev)
-3. Each subagent works in its area
-4. testing (@qa-engineer) reviews everything
-5. Orchestrator integrates and presents the result
+1. `@planner` — plan con arquitectura y tareas; handoff al orquestador.
+2. `@orchestrator` — **MATRIZ DE DELEGACIÓN** + **PRÓXIMO MENSAJE** (formato en `ai-team/orchestrator.md`).
+3. Agentes en orden según matriz, por ejemplo:
+   - `@ux` / `@content` (perfiles `design-ux` o copy)
+   - `@db-dev` + skills bajo `.cursor/skills/database/`
+   - `@backend` (rutas API / lógica servidor)
+   - `@frontend` + `@styling` (UI + Tailwind responsive)
+4. `@integration` si hay que unificar ramas de archivos.
+5. `@security-sentinel` si hay API/DB/auth/input de usuario.
+6. `@reviewer` — veredicto y acciones.
+
+No uses nombres de agentes legacy; sigue `ai-team/*.md` y `.cursor/rules/roles.md`.

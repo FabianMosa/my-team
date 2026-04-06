@@ -4,6 +4,10 @@
 
 Maintain continuity of context between sessions and agents.
 
+## Availability
+
+If the **Engram MCP server is not enabled** in this Cursor workspace, **do not** attempt `mem_search` / `mem_save` / related tools. Continue the AI Dev Team pipeline normally without blocking on memory.
+
 ---
 
 ## Memory Reading (mem_search)

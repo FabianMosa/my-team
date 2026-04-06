@@ -1,4 +1,7 @@
 #!/bin/bash
+# Instala .cursor, .cursorrules, ai-team (+ STACK.md y AGENTS.md si no existen en destino).
+# Uso (desde el proyecto destino): bash /ruta/a/my-team/install_agent.sh
+# Sobrescribir archivos existentes: bash .../install_agent.sh --force
 
 set -e
 
@@ -6,20 +9,35 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASE_PATH="$SCRIPT_DIR"
 
+# --force : sobrescribe archivos existentes en destino (útil para actualizar la plantilla)
+FORCE=false
+for arg in "$@"; do
+  if [ "$arg" = "--force" ] || [ "$arg" = "-f" ]; then
+    FORCE=true
+  fi
+done
+
 echo "🚀 Installing Cursor AI stack..."
 
-# Función de copia: usa rsync si existe; si no, usa cp -n (no sobreescribe)
+# Copia recursiva: sin force no pisa archivos que ya existan en destino
 copy_if_missing() {
   local src="$1"
   local dest="$2"
 
   mkdir -p "$dest"
 
-  if command -v rsync >/dev/null 2>&1; then
-    rsync -av --ignore-existing "$src/" "$dest/"
+  if [ "$FORCE" = true ]; then
+    if command -v rsync >/dev/null 2>&1; then
+      rsync -av "$src/" "$dest/"
+    else
+      cp -R "$src/." "$dest/"
+    fi
   else
-    # Copia recursiva sin sobrescribir archivos existentes
-    cp -Rn "$src/." "$dest/"
+    if command -v rsync >/dev/null 2>&1; then
+      rsync -av --ignore-existing "$src/" "$dest/"
+    else
+      cp -Rn "$src/." "$dest/"
+    fi
   fi
 }
 
@@ -34,6 +52,11 @@ if [ ! -d "$BASE_PATH/.cursorrules" ]; then
   exit 1
 fi
 
+if [ ! -d "$BASE_PATH/ai-team" ]; then
+  echo "❌ Error: ai-team not found in $BASE_PATH"
+  exit 1
+fi
+
 # Validar proyecto
 if [ ! -f "package.json" ]; then
   echo "⚠️ Warning: No package.json found"
@@ -42,19 +65,33 @@ fi
 # Crear carpetas si no existen
 mkdir -p .cursor
 mkdir -p .cursorrules
-
+mkdir -p ai-team
 
 # Copia inteligente (NO sobreescribe)
 echo "📦 Copying .cursor..."
 copy_if_missing "$BASE_PATH/.cursor" ".cursor"
 
-
-echo "📦 Copying .cursorules..."
+echo "📦 Copying .cursorrules..."
 copy_if_missing "$BASE_PATH/.cursorrules" ".cursorrules"
 
+echo "📦 Copying ai-team..."
+copy_if_missing "$BASE_PATH/ai-team" "ai-team"
+
+# Documentación de equipo (no pisa si ya existe, salvo --force)
+copy_optional_root_file() {
+  local f="$1"
+  [ -f "$BASE_PATH/$f" ] || return 0
+  if [ "$FORCE" = false ] && [ -f "./$f" ]; then
+    echo "⏭️  Omitiendo $f (ya existe en destino; usa --force para sobrescribir)"
+    return 0
+  fi
+  echo "📄 Copying $f..."
+  cp "$BASE_PATH/$f" "./$f"
+}
+for f in STACK.md AGENTS.md; do copy_optional_root_file "$f"; done
 
 # Validación
-if [ -d ".cursor" ] && [ -d ".cursorrules" ]; then
+if [ -d ".cursor" ] && [ -d ".cursorrules" ] && [ -d "ai-team" ]; then
   echo "✅ Installation successful"
 else
   echo "❌ Installation failed"

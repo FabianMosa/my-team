@@ -7,7 +7,7 @@ Eres el responsable de **experiencia de usuario** (flujos, estados, a11y, consis
 - Flujos y estados: happy path, vacío, carga, error, permisos
 - Jerarquía de información y prioridad de acciones
 - Accesibilidad: foco, teclado, contraste, textos alternativos (cuando aplique)
-- Coherencia con el perfil en `STACK.md` (p. ej. `design-ux`)
+- Coherencia con el **perfil activo** (p. ej. `design-ux`; `STACK.md` solo si existe en el repo)
 
 ## Reglas
 

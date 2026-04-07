@@ -2,6 +2,8 @@
  * Copia la plantilla AI Dev Team desde la raíz de este repo hacia un proyecto destino.
  * Por defecto no sobrescribe archivos ya existentes en destino (merge seguro).
  *
+ * Copia STACK.md al destino (merge seguro). No copia README.md ni AGENTS.md.
+ *
  * Uso:
  *   node scripts/setup-cursor.cjs [rutaDestino] [--force]
  *
@@ -15,8 +17,8 @@ const path = require("path");
 
 const templateRoot = path.resolve(__dirname, "..");
 const dirsToCopy = [".cursor", ".cursorrules", "ai-team"];
-/** Documentación opcional: no pisa archivos existentes salvo --force */
-const optionalRootFiles = ["STACK.md", "AGENTS.md"];
+/** Perfiles: no pisa destino salvo --force */
+const optionalRootFiles = ["STACK.md"];
 
 function parseArgs(argv) {
   let force = false;
@@ -74,7 +76,9 @@ function main() {
     if (!fs.existsSync(from)) continue;
     const to = path.join(destRoot, file);
     if (!force && fs.existsSync(to)) {
-      console.log(`⏭️  Omitiendo ${file} (ya existe en destino; usa --force para sobrescribir)`);
+      console.log(
+        `⏭️  Omitiendo ${file} (ya existe en destino; usa --force para sobrescribir)`
+      );
       continue;
     }
     console.log(`📄 Copiando ${file} …`);
@@ -86,7 +90,9 @@ function main() {
     console.error("❌ Instalación incompleta.");
     process.exit(1);
   }
-  console.log("✅ Listo. Revisa .cursor/settings.json y STACK.md en el destino.");
+  console.log(
+    "✅ Listo. Revisa .cursor/settings.json y STACK.md. (README / AGENTS no se copian.)"
+  );
 }
 
 main();

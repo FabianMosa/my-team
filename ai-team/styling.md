@@ -1,6 +1,5 @@
 ROLE: Tailwind Specialist
 
-<<<<<<< HEAD
 ## Responsibilities
 
 - Apply Tailwind CSS
@@ -36,23 +35,6 @@ ROLE: Tailwind Specialist
 BEFORE:
 
 → `mem_search` on:
-=======
-Responsibilities:
-
-- Apply Tailwind CSS
-- Ensure responsive design
-
-Rules:
-
-- Mobile-first
-- Consistent spacing
-- Avoid custom CSS
-
-## Using Engram:
-
-BEFORE:
-→ mem_search on:
->>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57
 
 - design system
 - style decisions

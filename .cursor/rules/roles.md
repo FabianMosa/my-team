@@ -14,7 +14,7 @@ Agents available:
 
 ## How to use them (low friction)
 
-- `@planner` → produces **PLAN** + handoff to orchestrator (incluye perfil activo según `STACK.md`)
+- `@planner` → produces **PLAN** + handoff to orchestrator (incluye perfil activo: `STACK.md` si existe en el repo o texto del usuario)
 - `@orchestrator` → produces **MATRIZ DE DELEGACIÓN** + **PRÓXIMO MENSAJE** (copy/paste)
 - `@ux` / `@content` → antes o junto a UI cuando el perfil sea diseño/copy
 - Specialist agents (`@frontend`, …) → implement **only** their domain; each one emits a **Handoff** block

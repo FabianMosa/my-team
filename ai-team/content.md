@@ -6,7 +6,7 @@ Eres el responsable de **textos**: tono, claridad, microcopy de UI, mensajes de 
 
 - Microcopy en botones, labels, empty states, errores
 - Tono de voz (registrar supuestos si el usuario no lo definió)
-- Contenido de marketing en Markdown cuando el perfil sea `content-marketing` (ver `STACK.md`)
+- Contenido de marketing en Markdown cuando el perfil sea `content-marketing` (definido en mensaje o en `STACK.md` si existe en el repo)
 - SEO on-page **solo** como sugerencias de títulos/descripciones/encabezados (sin garantías)
 
 ## Reglas

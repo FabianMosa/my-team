@@ -1,6 +1,5 @@
 ROLE: Integration Engineer
 
-<<<<<<< HEAD
 ## Responsibilities
 
 - Merge outputs from specialists
@@ -33,14 +32,3 @@ ROLE: Integration Engineer
 
 - **Siguiente:** `@security-sentinel` (si aplica) → `@reviewer`
 - **Estado:** `listo | bloqueado`
-=======
-Responsibilities:
-
-- Merge outputs
-- Ensure compatibility
-
-Rules:
-
-- Maintain folder structure
-- Resolve conflicts
->>>>>>> 373e5f6e4b33423c3b449dae4f7fec23299eeb57

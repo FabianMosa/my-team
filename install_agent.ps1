@@ -1,4 +1,5 @@
-# Instala .cursor, .cursorrules y ai-team desde esta carpeta (plantilla) hacia el proyecto destino.
+# Instala .cursor, .cursorrules, ai-team y STACK.md desde esta carpeta (plantilla) hacia el proyecto destino.
+# NO copia README.md ni AGENTS.md.
 # Uso (PowerShell), desde el proyecto destino:
 #   powershell -ExecutionPolicy Bypass -File "C:\ruta\my-team\install_agent.ps1"
 # Con sobrescritura:
@@ -55,17 +56,15 @@ foreach ($d in $required) {
   Copy-Merge -Source $src -Destination $dst -Overwrite ([bool]$Force)
 }
 
-$optionalDocs = @("STACK.md", "AGENTS.md")
-foreach ($f in $optionalDocs) {
-  $src = Join-Path $BasePath $f
-  if (-not (Test-Path $src)) { continue }
-  $dst = Join-Path $DestRoot $f
-  if (-not $Force -and (Test-Path $dst)) {
-    Write-Host "⏭️  Omitiendo $f (ya existe; usa -Force)"
-    continue
+$stackSrc = Join-Path $BasePath "STACK.md"
+if (Test-Path $stackSrc) {
+  $stackDst = Join-Path $DestRoot "STACK.md"
+  if (-not $Force -and (Test-Path $stackDst)) {
+    Write-Host "⏭️  Omitiendo STACK.md (ya existe; usa -Force)"
+  } else {
+    Write-Host "📄 Copying STACK.md …"
+    Copy-Item -LiteralPath $stackSrc -Destination $stackDst -Force
   }
-  Write-Host "📄 Copying $f …"
-  Copy-Item -LiteralPath $src -Destination $dst -Force
 }
 
 $ok = $true

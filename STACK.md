@@ -35,3 +35,5 @@ Perfil activo: design-ux
 ```
 
 El `@planner` debe reflejar el perfil en **PLAN → Architecture** (una línea).
+
+`(node "C:\Users\USUARIO\Desktop\02 DEV\01-PROYECTOS\my-team\scripts\setup-cursor.cjs" .)`

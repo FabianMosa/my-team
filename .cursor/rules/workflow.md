@@ -8,7 +8,7 @@ Execution workflow:
 
 ## Priority order
 
-Planner → Orchestrator → Specialized agents (incl. `@ux` / `@content` cuando el perfil lo requiera; perfil en `STACK.md` si está en el repo o en el mensaje) → Integration → Security Sentinel → Reviewer
+Planner → Orchestrator → Specialized agents (incl. `@ux` / `@marketing` / `@content` cuando el perfil lo requiera; perfil en `STACK.md` si está en el repo o en el mensaje) → Integration → Security Sentinel → Reviewer
 
 ## Operational rules
 

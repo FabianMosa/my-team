@@ -11,7 +11,7 @@ ROLE: Reviewer
 - No duplication
 - Best practices followed
 - **Security:** Sentinel pass/remediation verified when applicable
-- **UX / copy (si el perfil activo es `design-ux` o hay UI nueva):** coherencia con `@ux` y textos de `@content` (tono, errores comprensibles, estados vacíos)
+- **UX / copy / marketing (si el perfil es `design-ux` o `content-marketing`):** coherencia entre estrategia (`@marketing`), flujos (`@ux`) y textos (`@content`)
 
 ## Mandatory output format (every response)
 

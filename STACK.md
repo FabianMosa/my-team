@@ -1,24 +1,35 @@
 # Perfiles de proyecto (stack)
 
-Usa **un perfil activo** por feature o por repo. El `@planner` y el `@orchestrator` deben leerlo y ajustar tareas (sin mezclar stacks).
+Este archivo define **perfiles de trabajo** para el flujo **AI Dev Team** de este repo. El `@planner` y el `@orchestrator` deben leerlo y ajustar tareas **sin mezclar stacks**.
 
-## Perfil A — `next-tailwind` (por defecto en esta plantilla)
+## Qué es este repositorio (contexto)
 
-- **Stack:** Next.js, JavaScript, Tailwind CSS
-- **Agentes típicos:** `@planner` → `@orchestrator` → `@frontend` / `@styling` / `@backend` / `@db-dev` → `@integration` → `@security-sentinel` (si aplica) → `@reviewer`
-- **Cuándo:** aplicaciones web con esta plantilla
+- **Plantilla Cursor:** reglas (`.cursor/rules/`), skills (`.cursor/skills/`), agentes en `ai-team/*.md` y comando slash `/build-feature` (ver `.cursor/commands/build-feature.md`).
+- **Setup:** scripts Node en `package.json` → `npm run setup:cursor` / `setup:cursor:force` (`scripts/setup-cursor.cjs`).
+- **MCP opcional:** memoria persistente **Engram** configurada en `.cursor/mcp.json` (útil para decisiones y contexto entre sesiones).
+- **Importante:** aquí no vive obligatoriamente una app Next.js; el **perfil A** describe el stack **típico** cuando construyes una web con las skills incluidas (Next, JS, Tailwind).
+
+---
+
+## Perfil A — `next-tailwind` (por defecto para apps web con esta plantilla)
+
+- **Stack objetivo al implementar:** Next.js, JavaScript, Tailwind CSS (skills bajo `.cursor/skills/frontend`, `styling`, `backend`, etc.).
+- **Pipeline típico:** `@planner` → `@orchestrator` → especialistas (`@ux`, `@marketing`, `@content`, `@frontend`, `@styling`, `@backend`, `@db-dev`, … según el feature) → `@integration` (si aplica) → `@security-sentinel` (API/DB/auth/input de usuario) → `@reviewer`.
+- **Cuándo:** aplicaciones web que quieras alinear con las convenciones de las skills del repo.
 
 ## Perfil B — `design-ux` (producto / diseño de experiencia)
 
-- **Enfoque:** flujos, jerarquía, estados vacíos/error, accesibilidad, microcopy de UI
-- **Agentes típicos:** `@ux` antes o en paralelo con `@frontend`; `@content` para textos finales
-- **Cuándo:** proyectos donde el riesgo principal es **claridad y usabilidad**, no solo código
+- **Enfoque:** flujos, jerarquía, estados vacíos/error, accesibilidad, microcopy de UI.
+- **Agentes típicos:** `@ux` antes o en paralelo con `@frontend`; `@content` para textos finales.
+- **Cuándo:** proyectos donde el riesgo principal es **claridad y usabilidad**, no solo código.
 
 ## Perfil C — `content-marketing` (go-to-market y copy)
 
-- **Enfoque:** estrategia de mensaje, posicionamiento, estructura de activos de marketing, SEO on-page (sin prometer rankings)
-- **Agentes típicos:** `@marketing` → `@content` → `@reviewer` (calidad editorial); código mínimo o ninguno
-- **Cuándo:** landings, decks de copy, emails, campañas y páginas de conversión (como documentos en repo)
+- **Enfoque:** estrategia de mensaje, posicionamiento, estructura de activos de marketing, SEO on-page (sin prometer rankings).
+- **Agentes típicos:** `@marketing` → `@content` → `@reviewer` (calidad editorial); código mínimo o ninguno.
+- **Cuándo:** landings, decks de copy, emails, campañas y páginas de conversión (como documentos en repo).
+
+---
 
 ## Cómo activar un perfil
 
@@ -35,6 +46,10 @@ Perfil activo: design-ux
 ```
 
 El `@planner` debe reflejar el perfil en **PLAN → Architecture** (una línea).
+
+**Atajo:** en Cursor puedes usar `/build-feature` e incluir al inicio `Perfil activo: …` (ver `.cursor/commands/build-feature.md`).
+
+---
 
 ## Cómo pedir trabajo a un agente (estilo del equipo)
 
@@ -55,7 +70,7 @@ Handoff: quién sigue después (@orchestrator, @reviewer, etc.)
 ### Reglas rápidas de redacción
 
 - Escribe con verbo de acción: "implementa", "refactoriza", "valida", "documenta".
-- Evita ambiguedad: cambia "mejorar" por criterios exactos y testeables.
+- Evita ambigüedad: cambia "mejorar" por criterios exactos y testeables.
 - Incluye alcance: qué sí tocar y qué no tocar.
 - Pide salida en formato del rol (si el rol tiene "Mandatory output format", respétalo).
 - Define prioridad cuando aplique: seguridad > integración > estilo.

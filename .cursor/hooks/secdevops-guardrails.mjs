@@ -4,6 +4,9 @@
  * Delega la lógica en `scripts/security-tool-middleware.mjs` para una sola fuente de verdad.
  *
  * Eventos soportados: preToolUse, beforeShellExecution, beforeReadFile.
+ *
+ * Nota: en `.cursor/hooks.json`, `preToolUse` y `beforeShellExecution` llevan `failClosed: true`
+ * para que un fallo anómalo del proceso (p. ej. Node no encontrado) no deje pasar la acción sin revisión.
  */
 
 import {

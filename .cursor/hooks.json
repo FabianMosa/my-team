@@ -5,13 +5,13 @@
       {
         "command": "node .cursor/hooks/secdevops-guardrails.mjs",
         "matcher": "Shell|Read|Write|Delete|StrReplace",
-        "failClosed": false
+        "failClosed": true
       }
     ],
     "beforeShellExecution": [
       {
         "command": "node .cursor/hooks/secdevops-guardrails.mjs",
-        "failClosed": false
+        "failClosed": true
       }
     ],
     "beforeReadFile": [

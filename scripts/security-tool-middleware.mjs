@@ -317,9 +317,14 @@ export function validatePreToolUsePayload(payload) {
   return { permission: "allow" };
 }
 
-// --- Autoverificación opcional al ejecutar este archivo con Node ---
+// --- Autoverificación: misma suite usa `npm run secdevops:selftest` y `npm test` ---
 
-function selfTest() {
+/**
+ * Ejecuta aserciones mínimas sobre políticas de rutas, shell y secretos.
+ * Exportada para `node --test` en `security-tool-middleware.test.mjs`.
+ * @returns {void}
+ */
+export function runSelfTestSuite() {
   const assert = (cond, msg) => {
     if (!cond) throw new Error(msg);
   };
@@ -344,5 +349,5 @@ const isMain =
   path.normalize(process.argv[1]) === path.normalize(fileURLToPath(import.meta.url));
 
 if (isMain) {
-  selfTest();
+  runSelfTestSuite();
 }

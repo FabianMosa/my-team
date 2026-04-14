@@ -2,14 +2,16 @@
  * Copia la plantilla AI Dev Team desde la raíz de este repo hacia un proyecto destino.
  * Por defecto no sobrescribe archivos ya existentes en destino (merge seguro).
  *
- * Copia STACK.md al destino (merge seguro). No copia README.md ni AGENTS.md.
+ * Copia STACK.md al destino (merge seguro). README.md, AGENTS.md y CHANGELOG.md solo si pasas
+ * **`--with-docs`** (misma regla merge/force que STACK.md).
  *
  * Uso:
- *   node scripts/setup-cursor.cjs [rutaDestino] [--force]
+ *   node scripts/setup-cursor.cjs [rutaDestino] [--force] [--with-docs]
  *
  * Ejemplos:
  *   cd mi-proyecto-next && node ../my-team/scripts/setup-cursor.cjs .
- *   node scripts/setup-cursor.cjs "C:\ruta\hoteleria"
+ *   node scripts/setup-cursor.cjs "C:\ruta\hoteleria" --with-docs
+ *   node scripts/setup-cursor.cjs . --force --with-docs
  */
 
 const fs = require("fs");
@@ -20,16 +22,21 @@ const dirsToCopy = [".cursor", ".cursorrules", "ai-team"];
 /** Perfiles: no pisa destino salvo --force */
 const optionalRootFiles = ["STACK.md"];
 
+/** Documentación de raíz: solo con `--with-docs` */
+const optionalDocRootFiles = ["README.md", "AGENTS.md", "CHANGELOG.md"];
+
 function parseArgs(argv) {
   let force = false;
+  let withDocs = false;
   const positional = [];
   for (const a of argv) {
     if (a === "--force" || a === "-f") force = true;
+    else if (a === "--with-docs") withDocs = true;
     else if (!a.startsWith("-")) positional.push(a);
   }
   const destRoot =
     positional.length > 0 ? path.resolve(positional[0]) : process.cwd();
-  return { destRoot, force };
+  return { destRoot, force, withDocs };
 }
 
 function assertTemplate() {
@@ -57,11 +64,13 @@ function copyRecursive(src, dest, force) {
 }
 
 function main() {
-  const { destRoot, force } = parseArgs(process.argv.slice(2));
+  const { destRoot, force, withDocs } = parseArgs(process.argv.slice(2));
   assertTemplate();
 
   console.log(
-    `🚀 Instalando plantilla Cursor → ${destRoot}${force ? " (force: sobrescribe)" : ""}`
+    `🚀 Instalando plantilla Cursor → ${destRoot}${force ? " (force: sobrescribe)" : ""}${
+      withDocs ? " (--with-docs)" : ""
+    }`
   );
 
   for (const d of dirsToCopy) {
@@ -71,18 +80,32 @@ function main() {
     copyRecursive(from, to, force);
   }
 
-  for (const file of optionalRootFiles) {
+  /** Copia un archivo suelto en la raíz de la plantilla si existe; respeta merge seguro y --force. */
+  function copyOptionalRootFile(file) {
     const from = path.join(templateRoot, file);
-    if (!fs.existsSync(from)) continue;
+    if (!fs.existsSync(from)) {
+      console.log(`⏭️  Omitiendo ${file} (no existe en plantilla)`);
+      return;
+    }
     const to = path.join(destRoot, file);
     if (!force && fs.existsSync(to)) {
       console.log(
         `⏭️  Omitiendo ${file} (ya existe en destino; usa --force para sobrescribir)`
       );
-      continue;
+      return;
     }
     console.log(`📄 Copiando ${file} …`);
     fs.copyFileSync(from, to);
+  }
+
+  for (const file of optionalRootFiles) {
+    copyOptionalRootFile(file);
+  }
+
+  if (withDocs) {
+    for (const file of optionalDocRootFiles) {
+      copyOptionalRootFile(file);
+    }
   }
 
   const ok = dirsToCopy.every((d) => fs.existsSync(path.join(destRoot, d)));
@@ -90,9 +113,10 @@ function main() {
     console.error("❌ Instalación incompleta.");
     process.exit(1);
   }
-  console.log(
-    "✅ Listo. Revisa .cursor/settings.json y STACK.md. (README / AGENTS no se copian.)"
-  );
+  const docHint = withDocs
+    ? " Documentación raíz copiada (README, AGENTS, CHANGELOG si existían)."
+    : " Opcional: añade --with-docs para copiar README.md, AGENTS.md y CHANGELOG.md al destino.";
+  console.log(`✅ Listo. Revisa .cursor/settings.json y STACK.md.${docHint}`);
 }
 
 main();

@@ -36,5 +36,4 @@ coverage/
 # TypeScript incremental (si se usa TS en algún proyecto consumidor)
 *.tsbuildinfo
 
-README.md 
-AGENTS.md
+# Documentación de la plantilla (README.md, AGENTS.md) va versionada en este repo.

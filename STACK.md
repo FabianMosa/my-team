@@ -5,7 +5,7 @@ Este archivo define **perfiles de trabajo** para el flujo **AI Dev Team** de est
 ## Qué es este repositorio (contexto)
 
 - **Plantilla Cursor:** reglas (`.cursor/rules/`), skills (`.cursor/skills/`), agentes en `ai-team/*.md` y comando slash `/build-feature` (ver `.cursor/commands/build-feature.md`).
-- **Setup:** scripts Node en `package.json` → `npm run setup:cursor` / `setup:cursor:force` (`scripts/setup-cursor.cjs`).
+- **Setup:** scripts Node en `package.json` → `npm run setup:cursor` / `setup:cursor:force` (`scripts/setup-cursor.cjs`). Opcional: **`--with-docs`** en la misma línea que el destino copia `README.md`, `AGENTS.md` y `CHANGELOG.md`. Tests del middleware: `npm test`; autochequeo rápido: `npm run secdevops:selftest`.
 - **MCP opcional:** memoria persistente **Engram** configurada en `.cursor/mcp.json` (útil para decisiones y contexto entre sesiones).
 - **Importante:** aquí no vive obligatoriamente una app Next.js; el **perfil A** describe el stack **típico** cuando construyes una web con las skills incluidas (Next, JS, Tailwind).
 

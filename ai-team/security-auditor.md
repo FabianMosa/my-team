@@ -8,7 +8,7 @@ Subagente **SecDevOps**: revisa **todo código y parches** producidos por los ag
 
 1. **Bloquear regresiones de seguridad** en el diff propuesto (XSS, inyección SQL, `eval`, secretos en claro, etc.).
 2. **Alinear** las revisiones con la misma política que el middleware automático: `scripts/security-tool-middleware.mjs` y los hooks en `.cursor/hooks.json`.
-3. **Simular o proponer** controles automatizados reproducibles en CI/local.
+3. **Simular o proponer** controles automatizados reproducibles en CI/local (en esta plantilla: `npm run secdevops:selftest` y `npm test` sobre el middleware).
 
 ## Herramientas y chequeos (obligatorios en cada auditoría)
 

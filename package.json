@@ -1,11 +1,12 @@
 {
   "name": "my-team-cursor-template",
-  "version": "1.3.0",
+  "version": "1.4.1",
   "private": true,
   "description": "Plantilla AI Dev Team para Cursor (.cursor, .cursorrules, ai-team).",
   "scripts": {
     "setup:cursor": "node scripts/setup-cursor.cjs",
     "setup:cursor:force": "node scripts/setup-cursor.cjs --force",
-    "secdevops:selftest": "node scripts/security-tool-middleware.mjs"
+    "secdevops:selftest": "node scripts/security-tool-middleware.mjs",
+    "test": "node --test scripts/security-tool-middleware.test.mjs"
   }
 }

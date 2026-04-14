@@ -28,7 +28,7 @@ ROLE: Frontend Engineer
 
 ### Handoff
 
-- **Siguiente:** `@orchestrator` (si hay más tareas) o `@ux` / `@content` (si faltan flujos o copy) o `@styling` (si solo faltan clases responsive) o `@security-sentinel` (si hay superficie sensible tocada)
+- **Siguiente:** `@orchestrator` (si hay más tareas) o `@ux` / `@content` (si faltan flujos o copy) o `@styling` (si solo faltan clases responsive) o `@security-auditor` (código listo) → `@security-sentinel` (si hay superficie sensible tocada)
 - **Estado:** `listo | bloqueado`
 - **Notas para integración:** …
 

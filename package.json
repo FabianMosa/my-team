@@ -5,6 +5,7 @@
   "description": "Plantilla AI Dev Team para Cursor (.cursor, .cursorrules, ai-team).",
   "scripts": {
     "setup:cursor": "node scripts/setup-cursor.cjs",
-    "setup:cursor:force": "node scripts/setup-cursor.cjs --force"
+    "setup:cursor:force": "node scripts/setup-cursor.cjs --force",
+    "secdevops:selftest": "node scripts/security-tool-middleware.mjs"
   }
 }

@@ -8,14 +8,15 @@ Execution workflow:
 
 ## Priority order
 
-Planner → Orchestrator → Specialized agents (incl. `@ux` / `@marketing` / `@content` cuando el perfil lo requiera; perfil en `STACK.md` si está en el repo o en el mensaje) → Integration → Security Sentinel → Reviewer
+Planner → Orchestrator → Specialized Dev agents (incl. `@ux` / `@marketing` / `@content` cuando el perfil lo requiera; perfil en `STACK.md` si está en el repo o en el mensaje) → Integration (si aplica) → **Security Auditor** → Security Sentinel (solo APIs/DB/auth/input) → Reviewer
 
 ## Operational rules
 
 - **No agent** should perform tasks outside its strictly defined responsibility.
 - **Visible handoffs:** If you are acting as `@orchestrator`, you **must** include the mandatory sections defined in `ai-team/orchestrator.md` (matrix, pipeline state, next message).
-- **Security checkpoint:** Any code involving API routes, database queries, or user inputs MUST be validated by the Security Sentinel before the Reviewer signs off.
-- **Final approval:** The Reviewer must confirm that the Sentinel's recommendations have been implemented (or explicitly waived with justification — rare).
+- **Security checkpoint (code):** All implementation output MUST pass `@security-auditor` before `@reviewer`; High/Critical findings bounce to the Dev agent automatically via the orchestrator.
+- **Security checkpoint (sensitive surfaces):** API routes, database queries, or user inputs MUST also pass `@security-sentinel` after the auditor and before the Reviewer signs off.
+- **Final approval:** The Reviewer must confirm auditor/sentinel remediation (or explicit waiver with justification — rare).
 
 ## Single-chat reality (important)
 

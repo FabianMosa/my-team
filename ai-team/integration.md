@@ -30,5 +30,5 @@ ROLE: Integration Engineer
 
 ### Handoff
 
-- **Siguiente:** `@security-sentinel` (si aplica) → `@reviewer`
+- **Siguiente:** `@security-auditor` (siempre con código) → `@security-sentinel` (si API/DB/auth/input) → `@reviewer`
 - **Estado:** `listo | bloqueado`

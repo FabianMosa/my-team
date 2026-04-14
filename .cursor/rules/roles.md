@@ -9,9 +9,10 @@ Agents available:
 - `@styling`
 - `@backend`
 - `@integration`
-- `@reviewer`
 - `@db-dev`
-- `@security-sentinel` (gatekeeper; use via orchestrator flow)
+- `@security-auditor` (SecDevOps: npm audit / eslint-security / secretos; rebote a Dev si falla)
+- `@security-sentinel` (OWASP profundo; vía orquestador, **después** del auditor en superficies sensibles)
+- `@reviewer`
 
 ## How to use them (low friction)
 
@@ -21,8 +22,9 @@ Agents available:
 - `@ux` / `@content` → antes o junto a UI cuando el perfil sea diseño/copy
 - Specialist agents (`@frontend`, …) → implement **only** their domain; each one emits a **Handoff** block
 - `@integration` → merges/conflict resolution across folders
-- `@security-sentinel` → mandatory before `@reviewer` when APIs/DB/auth/user input are involved
-- `@reviewer` → quality + confirms Sentinel remediation
+- `@security-auditor` → mandatory before `@reviewer` for any **code** output (rebote a Dev on High/Critical)
+- `@security-sentinel` → mandatory before `@reviewer` when APIs/DB/auth/user input are involved (after auditor pass)
+- `@reviewer` → quality + confirms auditor/sentinel remediation
 
 ## Domain boundaries
 

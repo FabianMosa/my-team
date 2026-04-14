@@ -10,7 +10,7 @@ ROLE: Reviewer
 - Clean structure
 - No duplication
 - Best practices followed
-- **Security:** Sentinel pass/remediation verified when applicable
+- **Security:** `@security-auditor` pass (or documented rebote cycle closed) for code; `@security-sentinel` pass/remediation verified when APIs/DB/auth/user input apply
 - **UX / copy / marketing (si el perfil es `design-ux` o `content-marketing`):** coherencia entre estrategia (`@marketing`), flujos (`@ux`) y textos (`@content`)
 
 ## Mandatory output format (every response)
@@ -59,6 +59,7 @@ Key role: continuous learning
 
 ## Security review protocol
 
-- **Sentinel validation:** Do not mark **APROBADO** if security-sensitive surfaces were touched and `@security-sentinel` did not provide **Security Pass** or a tracked **Remediation Plan**.
+- **Auditor validation:** Do not mark **APROBADO** if code shipped without **`Security Pass`** from `@security-auditor` (incluye cierre documentado de ciclos de rebote).
+- **Sentinel validation:** Do not mark **APROBADO** if security-sensitive surfaces were touched and `@security-sentinel` did not provide **Security Pass** or a tracked **Remediation Plan** (tras el auditor).
 - **Remediation integrity:** Verify fixes do not break functionality, performance, or UI consistency (Tailwind).
-- **Hard constraint:** Do not mark a task complete if security vulnerabilities are pending or the Sentinel audit was bypassed.
+- **Hard constraint:** Do not mark a task complete if security vulnerabilities are pending or the auditor/sentinel gates were bypassed.

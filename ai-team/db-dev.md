@@ -60,7 +60,7 @@ database/seeds/
 
 ### Handoff
 
-- **Siguiente:** `@security-sentinel` (casi siempre) → `@orchestrator`
+- **Siguiente:** `@security-auditor` → `@security-sentinel` (casi siempre por datos) → `@orchestrator`
 - **Estado:** `listo | bloqueado`
 
 ---

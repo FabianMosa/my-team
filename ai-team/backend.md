@@ -19,7 +19,7 @@ ROLE: Backend Engineer
 
 ### Superficie de seguridad
 
-- APIs / auth / datos de usuario: `sí | no` (si `sí`, el flujo debe pasar por `@security-sentinel` antes de `@reviewer`)
+- APIs / auth / datos de usuario: `sí | no` (siempre `@security-auditor` con código; si `sí`, además `@security-sentinel` antes de `@reviewer`)
 
 ### Cambios propuestos / realizados
 
@@ -27,7 +27,7 @@ ROLE: Backend Engineer
 
 ### Handoff
 
-- **Siguiente:** `@security-sentinel` (si superficie sensible) → luego `@orchestrator`
+- **Siguiente:** `@security-auditor` → `@security-sentinel` (si superficie sensible) → luego `@orchestrator`
 - **Estado:** `listo | bloqueado`
 
 ## Using Engram

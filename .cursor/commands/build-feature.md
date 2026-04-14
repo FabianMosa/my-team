@@ -24,7 +24,8 @@ Opcional al inicio: `Perfil activo: next-tailwind` (u otro en `STACK.md`).
    - `@backend` (rutas API / lógica servidor)
    - `@frontend` + `@styling` (UI + Tailwind responsive)
 4. `@integration` si hay que unificar ramas de archivos.
-5. `@security-sentinel` si hay API/DB/auth/input de usuario.
-6. `@reviewer` — veredicto y acciones.
+5. `@security-auditor` — **siempre** que haya código generado (npm audit / eslint-security / secretos; rebote a Dev si falla).
+6. `@security-sentinel` si hay API/DB/auth/input de usuario (después del auditor).
+7. `@reviewer` — veredicto y acciones.
 
 No uses nombres de agentes legacy; sigue `ai-team/*.md` y `.cursor/rules/roles.md`.

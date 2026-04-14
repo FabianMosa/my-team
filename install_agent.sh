@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# install_agent.sh — Copia .cursor, .cursorrules, ai-team y STACK.md de ESTE repo al proyecto destino.
+# install_agent.sh — Copia .cursor, .cursorrules, ai-team, scripts/ y STACK.md de ESTE repo al proyecto destino.
+# La carpeta scripts/ incluye setup-cursor y el middleware SecDevOps usado por .cursor/hooks.json.
 # NO copia README.md ni AGENTS.md (evitas pisar la documentación propia del otro proyecto).
 #
 # Uso (desde el proyecto destino):
@@ -62,6 +63,11 @@ if [ ! -d "$BASE_PATH/ai-team" ]; then
   exit 1
 fi
 
+if [ ! -d "$BASE_PATH/scripts" ]; then
+  echo "❌ Error: scripts not found in $BASE_PATH"
+  exit 1
+fi
+
 if [ ! -f "package.json" ]; then
   echo "⚠️ Warning: No package.json found"
 fi
@@ -69,6 +75,7 @@ fi
 mkdir -p .cursor
 mkdir -p .cursorrules
 mkdir -p ai-team
+mkdir -p scripts
 
 echo "📦 Copying .cursor..."
 copy_if_missing "$BASE_PATH/.cursor" ".cursor"
@@ -78,6 +85,10 @@ copy_if_missing "$BASE_PATH/.cursorrules" ".cursorrules"
 
 echo "📦 Copying ai-team..."
 copy_if_missing "$BASE_PATH/ai-team" "ai-team"
+
+# SecDevOps + setup Cursor (rutas relativas desde la raíz del proyecto, p. ej. .cursor/hooks → ../scripts/…)
+echo "📦 Copying scripts..."
+copy_if_missing "$BASE_PATH/scripts" "scripts"
 
 # STACK.md (perfiles); no pisa destino salvo --force
 copy_optional_root_file() {
@@ -92,7 +103,7 @@ copy_optional_root_file() {
 }
 copy_optional_root_file "STACK.md"
 
-if [ -d ".cursor" ] && [ -d ".cursorrules" ] && [ -d "ai-team" ]; then
+if [ -d ".cursor" ] && [ -d ".cursorrules" ] && [ -d "ai-team" ] && [ -d "scripts" ]; then
   echo "✅ Installation successful"
 else
   echo "❌ Installation failed"
@@ -100,3 +111,6 @@ else
 fi
 
 echo "🎉 Cursor AI ready"
+echo "💡 Si el destino aún no tiene los npm scripts, añade en package.json (o ejecuta manualmente):"
+echo "   \"setup:cursor\": \"node scripts/setup-cursor.cjs\""
+echo "   \"secdevops:selftest\": \"node scripts/security-tool-middleware.mjs\""

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# install_agent.sh — Copia .cursor, .cursorrules, ai-team, scripts/ y STACK.md de ESTE repo al proyecto destino.
+# install_agent.sh — Copia .cursor, .cursorrules, ai-team, scripts/, STACK.md y START_HERE.md de ESTE repo al proyecto destino.
 # La carpeta scripts/ incluye setup-cursor y el middleware SecDevOps usado por .cursor/hooks.json.
 # NO copia README.md ni AGENTS.md (evitas pisar la documentación propia del otro proyecto).
 #
@@ -90,7 +90,7 @@ copy_if_missing "$BASE_PATH/ai-team" "ai-team"
 echo "📦 Copying scripts..."
 copy_if_missing "$BASE_PATH/scripts" "scripts"
 
-# STACK.md (perfiles); no pisa destino salvo --force
+# STACK.md (perfiles) y START_HERE.md (índice / SSOT en resumen); no pisan destino salvo --force
 copy_optional_root_file() {
   local f="$1"
   [ -f "$BASE_PATH/$f" ] || return 0
@@ -102,6 +102,7 @@ copy_optional_root_file() {
   cp "$BASE_PATH/$f" "./$f"
 }
 copy_optional_root_file "STACK.md"
+copy_optional_root_file "START_HERE.md"
 
 if [ -d ".cursor" ] && [ -d ".cursorrules" ] && [ -d "ai-team" ] && [ -d "scripts" ]; then
   echo "✅ Installation successful"

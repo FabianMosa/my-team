@@ -2,6 +2,8 @@
 
 Repositorio **plantilla**: reglas, skills, agentes y guardrails SecDevOps para trabajar en Cursor con un flujo reproducible (plan → orquestación → especialistas → seguridad → revisión). **No incluye** una aplicación Next.js ni runtime de producto; el stack web se describe en `STACK.md` para cuando generes código en otro repo o carpeta.
 
+**Primera vez en el repo:** lee el índice de una página en **`START_HERE.md`** (orden de lectura y política de fuente única de verdad).
+
 ## Inicio rápido
 
 1. Clona o copia este repo.
@@ -26,7 +28,7 @@ Repositorio **plantilla**: reglas, skills, agentes y guardrails SecDevOps para t
    npm run setup:cursor -- "C:\ruta\destino" --with-docs
    ```
 
-3. Lee el mapa de agentes y el pipeline en **`AGENTS.md`** y los perfiles de trabajo en **`STACK.md`**.
+3. Lee **`START_HERE.md`** (mapa rápido), luego el pipeline en **`AGENTS.md`** y los perfiles en **`STACK.md`**.
 
 4. En Cursor, el comando slash **`/build-feature`** (definido en `.cursor/commands/build-feature.md`) arranca el flujo documentado.
 
@@ -34,14 +36,15 @@ Repositorio **plantilla**: reglas, skills, agentes y guardrails SecDevOps para t
 
 | Script | Descripción |
 | ------ | ----------- |
-| `npm run setup:cursor` | Copia `.cursor`, `.cursorrules`, `ai-team` y `STACK.md` al destino. Añade `--with-docs` tras el destino para README/AGENTS/CHANGELOG. |
+| `npm run setup:cursor` | Copia `.cursor`, `.cursorrules`, `ai-team`, `STACK.md` y `START_HERE.md` al destino. Añade `--with-docs` tras el destino para README/AGENTS/CHANGELOG. |
 | `npm run secdevops:selftest` | Autochequeo rápido del middleware de políticas. |
 | `npm test` | Tests del middleware (`node --test`). |
 
 ## Documentación clave
 
-- **`AGENTS.md`** — Orden del pipeline, catálogo de agentes, cuándo acortar el flujo, hooks y checklist de release.
-- **`STACK.md`** — Perfiles (`next-tailwind`, `design-ux`, `content-marketing`).
+- **`START_HERE.md`** — Índice de una página: orden de lectura y tabla SSOT (qué archivo es canónico por tema).
+- **`AGENTS.md`** — **Canónico del pipeline:** orden de agentes, cuándo acortar el flujo, hooks, checklist de release; sección **Fuente única de verdad** para mantenedores.
+- **`STACK.md`** — **Canónico de perfiles** (`next-tailwind`, `design-ux`, `content-marketing`).
 - **`CHANGELOG.md`** — Historial de versiones de la plantilla.
 - **`examples/README.md`** — Cómo usar la plantilla sin un monorepo de ejemplo embebido.
 

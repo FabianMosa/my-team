@@ -4,6 +4,18 @@ Todas las notas relevantes por versión de la plantilla **my-team-cursor-templat
 
 El formato es inspirado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
+## [1.4.2] - 2026-04-14
+
+### Añadido
+
+- **`START_HERE.md`**: índice de una página (orden de lectura, tabla SSOT, atajos).
+- **`AGENTS.md`**: sección **Fuente única de verdad** y punto extra en checklist pre-release para revisar coherencia con `START_HERE.md`.
+
+### Cambiado
+
+- **`README.md`**, **`STACK.md`**, **`.cursor/rules/dev-team.md`**, **`.cursor/commands/build-feature.md`**, **`examples/README.md`**: enlaces y remisiones al índice y a documentos canónicos (sin duplicar el pipeline largo).
+- **`scripts/setup-cursor.cjs`** y **`install_agent.sh`**: copian **`START_HERE.md`** al destino junto con `STACK.md` (merge seguro / `--force`).
+
 ## [1.4.1] - 2026-04-14
 
 ### Añadido

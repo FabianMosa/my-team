@@ -1,6 +1,8 @@
 
 # /build-feature
 
+Mapa de documentación del repo: **`START_HERE.md`**. Pipeline canónico: **`AGENTS.md`**.
+
 ## Description
 
 Inicia el flujo **AI Dev Team** para una feature nueva: plan → orquestación visible → agentes especializados.

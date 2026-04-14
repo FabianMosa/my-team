@@ -1,6 +1,6 @@
 # AI Dev Team — regla corta
 
-La definición **completa** del pipeline, agentes, cuándo acortar el flujo, hooks y checklist de release está en **`AGENTS.md`** (raíz del repo). Aquí solo fijamos lo no negociable para el modelo.
+La definición **completa** del pipeline, agentes, cuándo acortar el flujo, hooks y checklist de release está en **`AGENTS.md`** (raíz del repo). La política de **fuente única de verdad** (qué archivo editar primero por tema) está en la sección homónima de **`AGENTS.md`**. Para humanos: mapa de entrada en **`START_HERE.md`**. Aquí solo fijamos lo no negociable para el modelo.
 
 ## No negociable
 

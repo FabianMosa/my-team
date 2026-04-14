@@ -2,7 +2,7 @@
  * Copia la plantilla AI Dev Team desde la raíz de este repo hacia un proyecto destino.
  * Por defecto no sobrescribe archivos ya existentes en destino (merge seguro).
  *
- * Copia STACK.md al destino (merge seguro). README.md, AGENTS.md y CHANGELOG.md solo si pasas
+ * Copia STACK.md y START_HERE.md al destino (merge seguro). README.md, AGENTS.md y CHANGELOG.md solo si pasas
  * **`--with-docs`** (misma regla merge/force que STACK.md).
  *
  * Uso:
@@ -19,8 +19,8 @@ const path = require("path");
 
 const templateRoot = path.resolve(__dirname, "..");
 const dirsToCopy = [".cursor", ".cursorrules", "ai-team"];
-/** Perfiles: no pisa destino salvo --force */
-const optionalRootFiles = ["STACK.md"];
+/** Índice SSOT + perfiles: no pisa destino salvo --force */
+const optionalRootFiles = ["STACK.md", "START_HERE.md"];
 
 /** Documentación de raíz: solo con `--with-docs` */
 const optionalDocRootFiles = ["README.md", "AGENTS.md", "CHANGELOG.md"];
@@ -116,7 +116,9 @@ function main() {
   const docHint = withDocs
     ? " Documentación raíz copiada (README, AGENTS, CHANGELOG si existían)."
     : " Opcional: añade --with-docs para copiar README.md, AGENTS.md y CHANGELOG.md al destino.";
-  console.log(`✅ Listo. Revisa .cursor/settings.json y STACK.md.${docHint}`);
+  console.log(
+    `✅ Listo. Revisa .cursor/settings.json, STACK.md y START_HERE.md.${docHint}`
+  );
 }
 
 main();

@@ -1,6 +1,24 @@
 # AGENTS.md — AI Dev Team (Cursor)
 
-Este documento resume **qué agentes existen en esta plantilla**, **en qué orden encajan** y **dónde está el detalle** de cada rol. Sirve como mapa rápido para personas y para asistentes que deban seguir el mismo flujo. Para instalación y scripts, ver también **`README.md`**; historial de versiones: **`CHANGELOG.md`**.
+Este documento resume **qué agentes existen en esta plantilla**, **en qué orden encajan** y **dónde está el detalle** de cada rol. Sirve como mapa rápido para personas y para asistentes que deban seguir el mismo flujo. Para instalación y scripts, ver también **`README.md`**; historial de versiones: **`CHANGELOG.md`**. **Índice de una página y orden de lectura:** **`START_HERE.md`**.
+
+---
+
+## Fuente única de verdad (SSOT)
+
+Objetivo: **un sitio canónico por tema** y en el resto **remisiones breves**, para que la plantilla no derive entre copias del mismo pipeline o de los mismos perfiles.
+
+| Tema | Canónico (editar aquí primero) | En otros archivos |
+| ---- | ------------------------------- | ------------------- |
+| Pipeline obligatorio y acortado, tabla de agentes, hooks `failClosed`, checklist pre-release | **Este `AGENTS.md`** | `.cursor/rules/dev-team.md`, `README.md`, `STACK.md`, comandos slash: solo enlaces o un párrafo de contexto. |
+| Perfiles (`next-tailwind`, `design-ux`, `content-marketing`) y stack asumido al implementar | **`STACK.md`** | `@planner` / `@orchestrator`: citar perfil; no reescribir la tabla de perfiles entera. |
+| Formato de salida del orquestador, matriz, “próximo mensaje” | **`ai-team/orchestrator.md`** | `AGENTS.md`: mención y enlace (ya hecho arriba). |
+| Criterios SecDevOps del auditor / sentinel | **`ai-team/security-auditor.md`**, **`ai-team/security-sentinel.md`** | Alineados con `scripts/security-tool-middleware.mjs` donde aplique la misma política. |
+| Reglas mínimas en Cursor (no negociable) | **`.cursor/rules/dev-team.md`** | Debe remitir aquí para el detalle del pipeline; no duplicar listas largas de pasos. |
+| Política ejecutable (rutas, shell, denegaciones) | **`scripts/security-tool-middleware.mjs`** | Hooks: **`.cursor/hooks.json`** + **`.cursor/hooks/secdevops-guardrails.mjs`** (sin redefinir listas de bloqueo en markdown). |
+| Instalación, scripts `npm`, alcance “plantilla vs app” | **`README.md`** | `examples/README.md`: caso consumidor; no repetir toda la tabla de scripts salvo un resumen. |
+
+**Regla práctica:** si añades un paso nuevo al pipeline o un agente, actualiza **primero** `AGENTS.md` (y `ai-team/<rol>.md` si hay definición de rol); después ajusta enlaces en `README.md`, `START_HERE.md` o `.cursor/commands/build-feature.md` solo si el flujo visible para el usuario cambia.
 
 ---
 
@@ -98,7 +116,8 @@ Antes de subir una etiqueta de versión o publicar un zip de la plantilla:
 1. `npm run secdevops:selftest` y `npm test` en verde.
 2. Revisar `.cursor/hooks.json` y que los paths del hook sean válidos en Windows y Unix.
 3. Actualizar `CHANGELOG.md` y el campo `version` en `package.json`.
-4. Hacer un `setup:cursor` de prueba hacia una carpeta temporal (opcional: con `--with-docs`) y abrir el proyecto en Cursor.
+4. Revisar que **`START_HERE.md`** enlaza correctamente a los documentos canónicos (sección SSOT) y que no hay contradicciones con este archivo.
+5. Hacer un `setup:cursor` de prueba hacia una carpeta temporal (opcional: con `--with-docs`) y abrir el proyecto en Cursor.
 
 ---
 

@@ -15,6 +15,6 @@ Esta plantilla **no** incluye una app Next completa embebida (evita duplicar man
    npm run setup:cursor -- /ruta/absoluta/a/tu-app --with-docs
    ```
 
-3. Abre **tu-app** en Cursor: tendrás `.cursor/`, `ai-team/` y reglas alineadas con `STACK.md` (perfil `next-tailwind` u otro).
+3. Abre **tu-app** en Cursor: tendrás `.cursor/`, `ai-team/`, `STACK.md`, `START_HERE.md` (índice y SSOT en resumen) y reglas alineadas al perfil (`next-tailwind` u otro en `STACK.md`).
 
 Para el mismo texto de agentes y checklist en el repo de la app, usa **`--with-docs`** en el comando anterior; si no, puedes copiar esos archivos a mano desde **my-team**.

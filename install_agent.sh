@@ -11,6 +11,7 @@
 # Sobrescribir archivos existentes en destino:
 #   bash ".../install_agent.sh" --force
 #
+#bash "/c/Users/USUARIO/Desktop/02 DEV/01-PROYECTOS/my-team/install_agent.sh"
 # En Windows: Git Bash o WSL. Rutas con espacios entre comillas.
 
 set -e

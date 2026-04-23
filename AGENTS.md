@@ -124,3 +124,7 @@ Antes de subir una etiqueta de versión o publicar un zip de la plantilla:
 ## Skills por dominio (referencia)
 
 Bajo `.cursor/skills/` hay guías reutilizables (p. ej. `frontend/`, `backend/`, `database/`, `styling/`, `review/`). El agente correspondiente o el usuario pueden citar la skill al delegar tareas concretas.
+
+Para estandarizar delegaciones con **skill obligatoria + salida verificable**, usa el comando **`/delegate-with-skills`** (`.cursor/commands/delegate-with-skills.md`).
+Si necesitas velocidad operativa, usa los atajos por dominio: **`/delegate-backend`**, **`/delegate-frontend`**, **`/delegate-styling`**, **`/delegate-db`**, **`/delegate-review`** y **`/delegate-orchestrator`**.
+Si quieres decidir automaticamente el mejor atajo segun objetivo, usa **`/delegate-auto`** (`.cursor/commands/delegate-auto.md`).

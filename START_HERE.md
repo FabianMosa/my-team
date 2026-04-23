@@ -14,6 +14,9 @@ Este repo es una **plantilla Cursor** (agentes, reglas, skills, hooks SecDevOps)
 | 4 | **`STACK.md`** | **Canónico de perfiles** (`next-tailwind`, `design-ux`, `content-marketing`) y contexto de stack al planificar. |
 | 5 | **`ai-team/*.md`** | Definición operativa de cada rol (orquestador, planner, seguridad, etc.). |
 | 6 | **`.cursor/commands/build-feature.md`** | Comando slash **`/build-feature`** en Cursor. |
+| 7 | **`.cursor/commands/delegate-with-skills.md`** | Plantillas para delegar con skill obligatoria por agente. |
+| 8 | **`.cursor/commands/delegate-*.md`** | Delegación rápida por dominio (`backend`, `frontend`, `styling`, `db`, `review`, `orchestrator`). |
+| 9 | **`.cursor/commands/delegate-auto.md`** | Router para recomendar el mejor comando de delegación según objetivo. |
 
 Si solo vas a **instalar la plantilla en tu app**: lee `README.md` → ejecuta `npm run setup:cursor` → abre tu proyecto en Cursor y usa **`/build-feature`**.
 
@@ -42,6 +45,9 @@ El detalle para **mantenedores** de esta política está en la sección *Fuente 
 - **Instalar en otro proyecto:** `npm run setup:cursor -- "ruta\al\destino"` (opcional: `--force`, `--with-docs`). Ver **`README.md`**.
 - **Comprobar políticas:** `npm run secdevops:selftest` y **`npm test`**.
 - **Flujo de feature en el editor:** comando **`/build-feature`** (ver **`.cursor/commands/build-feature.md`**).
+- **Delegación robusta por dominio:** comando **`/delegate-with-skills`** (ver **`.cursor/commands/delegate-with-skills.md`**).
+- **Delegación directa por rol:** comandos **`/delegate-backend`**, **`/delegate-frontend`**, **`/delegate-styling`**, **`/delegate-db`**, **`/delegate-review`**, **`/delegate-orchestrator`**.
+- **Ruteo automático de delegación:** comando **`/delegate-auto`** (ver **`.cursor/commands/delegate-auto.md`**).
 
 ---
 

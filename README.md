@@ -32,7 +32,7 @@ Repositorio **plantilla**: reglas, skills, agentes y guardrails SecDevOps para t
 
 4. En Cursor, el comando slash **`/build-feature`** (definido en `.cursor/commands/build-feature.md`) arranca el flujo documentado.
 5. Para delegaciones consistentes por agente+skill, usa **`/delegate-with-skills`** (definido en `.cursor/commands/delegate-with-skills.md`).
-6. Para delegación rápida por dominio, usa: **`/delegate-backend`**, **`/delegate-frontend`**, **`/delegate-styling`**, **`/delegate-db`**, **`/delegate-review`**.
+6. Para delegación rápida por dominio, usa: **`/delegate-backend`**, **`/delegate-ui`**, **`/delegate-db`**, **`/delegate-review`**.
 7. Para coordinar la matriz de trabajo y handoffs, usa **`/delegate-orchestrator`**.
 8. Para enrutar automáticamente al mejor comando de delegación, usa **`/delegate-auto`**.
 
@@ -52,7 +52,7 @@ Repositorio **plantilla**: reglas, skills, agentes y guardrails SecDevOps para t
 - **`CHANGELOG.md`** — Historial de versiones de la plantilla.
 - **`examples/README.md`** — Cómo usar la plantilla sin un monorepo de ejemplo embebido.
 - **`.cursor/commands/delegate-with-skills.md`** — Plantillas de handoff para obligar skill por dominio y resultado verificable.
-- **`.cursor/commands/delegate-*.md`** — Comandos de delegación rápida por dominio (backend, frontend, styling, db, review y orchestrator).
+- **`.cursor/commands/delegate-*.md`** — Comandos de delegación rápida por dominio (backend, ui, db, review y orchestrator).
 - **`.cursor/commands/delegate-auto.md`** — Router de delegación: recomienda comando, agente y skill según objetivo.
 
 ## Seguridad y MCP

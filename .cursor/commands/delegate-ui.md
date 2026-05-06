@@ -1,14 +1,14 @@
-# /delegate-frontend
+# /delegate-ui
 
-Delegación rápida para tareas de frontend con skill obligatoria.
+Delegación rápida para tareas de UI Engineer con skill obligatoria.
 
 ## Description
 
-Genera un handoff directo para `@frontend`, con foco en experiencia responsive y estados de UI completos.
+Genera un handoff directo para `@ui-engineer`, con foco en UX, diseño responsive y estados de UI completos.
 
 ## Usage
 
-/delegate-frontend [objetivo]
+/delegate-ui [objetivo]
 
 Opcional:
 - `Riesgo: bajo|medio|alto`
@@ -17,7 +17,7 @@ Opcional:
 ## Prompt listo para pegar
 
 ```md
-@frontend
+@ui-engineer
 Objetivo: <pantalla/componente/flujo a construir>.
 Contexto: <feature/bug + restricciones>.
 Skill obligatoria: .cursor/skills/frontend/create_component.md
@@ -32,5 +32,5 @@ Salida esperada:
 Criterio de done:
 - Comportamiento responsive validado.
 - Acciones principales del usuario completan el flujo.
-- Handoff a @styling o @orchestrator según corresponda.
+- Handoff a @orchestrator según corresponda.
 ```

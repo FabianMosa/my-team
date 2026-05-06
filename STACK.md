@@ -16,13 +16,13 @@ Este archivo define **perfiles de trabajo** para el flujo **AI Dev Team** de est
 ## Perfil A — `next-tailwind` (por defecto para apps web con esta plantilla)
 
 - **Stack objetivo al implementar:** Next.js, JavaScript, Tailwind CSS (skills bajo `.cursor/skills/frontend`, `styling`, `backend`, etc.).
-- **Pipeline típico:** `@planner` → `@orchestrator` → especialistas Dev (`@ux`, `@marketing`, `@content`, `@frontend`, `@styling`, `@backend`, `@db-dev`, … según el feature) → `@integration` (si aplica) → `@security-auditor` (todo código) → `@security-sentinel` (solo si API/DB/auth/input de usuario) → `@reviewer`.
+- **Pipeline típico:** `@planner` → `@orchestrator` → especialistas Dev (`@ui-engineer`, `@marketing`, `@content`, `@backend`, `@db-dev`, … según el feature) → `@integration` (si aplica) → `@security-auditor` (todo código) → `@security-sentinel` (solo si API/DB/auth/input de usuario) → `@reviewer`.
 - **Cuándo:** aplicaciones web que quieras alinear con las convenciones de las skills del repo.
 
 ## Perfil B — `design-ux` (producto / diseño de experiencia)
 
 - **Enfoque:** flujos, jerarquía, estados vacíos/error, accesibilidad, microcopy de UI.
-- **Agentes típicos:** `@ux` antes o en paralelo con `@frontend`; `@content` para textos finales.
+- **Agentes típicos:** `@ui-engineer`; `@content` para textos finales.
 - **Cuándo:** proyectos donde el riesgo principal es **claridad y usabilidad**, no solo código.
 
 ## Perfil C — `content-marketing` (go-to-market y copy)

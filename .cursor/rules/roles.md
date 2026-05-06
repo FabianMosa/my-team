@@ -2,11 +2,9 @@ Agents available:
 
 - `@planner`
 - `@orchestrator`
-- `@ux` (flujos, estados, a11y)
+- `@ui-engineer` (UX, UI, Tailwind)
 - `@marketing` (estrategia de mensaje, posicionamiento, activos de conversion)
 - `@content` (copy / microcopy y textos finales)
-- `@frontend`
-- `@styling`
 - `@backend`
 - `@integration`
 - `@db-dev`
@@ -19,8 +17,8 @@ Agents available:
 - `@planner` → produces **PLAN** + handoff to orchestrator (incluye perfil activo: `STACK.md` si existe en el repo o texto del usuario)
 - `@orchestrator` → produces **MATRIZ DE DELEGACIÓN** + **PRÓXIMO MENSAJE** (copy/paste)
 - `@marketing` → define estrategia de mensaje y activos (especialmente en `content-marketing`)
-- `@ux` / `@content` → antes o junto a UI cuando el perfil sea diseño/copy
-- Specialist agents (`@frontend`, …) → implement **only** their domain; each one emits a **Handoff** block
+- `@ui-engineer` / `@content` → antes o junto a la integración cuando el perfil sea diseño/copy
+- Specialist agents (`@ui-engineer`, …) → implement **only** their domain; each one emits a **Handoff** block
 - `@integration` → merges/conflict resolution across folders
 - `@security-auditor` → mandatory before `@reviewer` for any **code** output (rebote a Dev on High/Critical)
 - `@security-sentinel` → mandatory before `@reviewer` when APIs/DB/auth/user input are involved (after auditor pass)

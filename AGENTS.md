@@ -28,7 +28,7 @@ Orden lógico del trabajo (no saltar planificación ni orquestación en tareas n
 
 1. **`@planner`** — Plan estructurado (arquitectura + tareas + handoff al orquestador).
 2. **`@orchestrator`** — Coordina con **MATRIZ DE DELEGACIÓN** y **PRÓXIMO MENSAJE** visible en el chat (ver `ai-team/orchestrator.md`).
-3. **Subagentes Dev (especialistas)** — Según el feature y el **perfil activo** (`STACK.md` o texto del usuario: *Perfil activo: …*): `@frontend`, `@backend`, `@db-dev`, `@styling`, `@ux`, `@marketing`, `@content`, `@integration`, etc.
+3. **Subagentes Dev (especialistas)** — Según el feature y el **perfil activo** (`STACK.md` o texto del usuario: *Perfil activo: …*): `@ui-engineer`, `@backend`, `@db-dev`, `@marketing`, `@content`, `@integration`, etc.
 4. **`@integration`** — Unifica salidas entre carpetas/ramas de trabajo cuando haga falta (sigue siendo Dev-side hasta el auditor).
 5. **`@security-auditor`** — **SecDevOps obligatorio** para todo **código** generado: simula o pide `npm audit`, reglas tipo `eslint-plugin-security`, barrido de secretos; si falla, **rebote al Dev** con informe (ver `ai-team/security-auditor.md`).
 6. **`@security-sentinel`** — Revisión OWASP / arquitectura **después** del auditor y **antes** del revisor cuando hay **APIs, auth, base de datos o entrada de usuario**.
@@ -66,11 +66,9 @@ El script `secdevops-guardrails.mjs` ante JSON inválido responde **allow** (com
 | ------ | --------- | ------------------- |
 | `@planner` | Desglosa requisitos en plan ejecutable | `ai-team/planner.md` |
 | `@orchestrator` | Delega sin implementar código de app | `ai-team/orchestrator.md` |
-| `@ux` | Flujos, estados vacío/error, a11y | `ai-team/ux.md` |
+| `@ui-engineer`| UX, UI cliente, componentes, Tailwind, a11y | `ai-team/ui-engineer.md` |
 | `@marketing` | Mensaje, posicionamiento, activos de conversión | `ai-team/marketing.md` |
 | `@content` | Copy y microcopy finales | `ai-team/content.md` |
-| `@frontend` | UI cliente / páginas / componentes (dominio front) | `ai-team/frontend.md` |
-| `@styling` | Tailwind, patrones visuales, consistencia UI | `ai-team/styling.md` |
 | `@backend` | API routes, lógica de servidor | `ai-team/backend.md` |
 | `@db-dev` | Esquema, migraciones, seeds | `ai-team/db-dev.md` |
 | `@integration` | Ensamblar cambios entre partes del repo | `ai-team/integration.md` |
@@ -126,5 +124,5 @@ Antes de subir una etiqueta de versión o publicar un zip de la plantilla:
 Bajo `.cursor/skills/` hay guías reutilizables (p. ej. `frontend/`, `backend/`, `database/`, `styling/`, `review/`). El agente correspondiente o el usuario pueden citar la skill al delegar tareas concretas.
 
 Para estandarizar delegaciones con **skill obligatoria + salida verificable**, usa el comando **`/delegate-with-skills`** (`.cursor/commands/delegate-with-skills.md`).
-Si necesitas velocidad operativa, usa los atajos por dominio: **`/delegate-backend`**, **`/delegate-frontend`**, **`/delegate-styling`**, **`/delegate-db`**, **`/delegate-review`** y **`/delegate-orchestrator`**.
+Si necesitas velocidad operativa, usa los atajos por dominio: **`/delegate-backend`**, **`/delegate-ui`**, **`/delegate-db`**, **`/delegate-review`** y **`/delegate-orchestrator`**.
 Si quieres decidir automaticamente el mejor atajo segun objetivo, usa **`/delegate-auto`** (`.cursor/commands/delegate-auto.md`).

@@ -11,7 +11,7 @@ ROLE: Reviewer
 - No duplication
 - Best practices followed
 - **Security:** `@security-auditor` pass (or documented rebote cycle closed) for code; `@security-sentinel` pass/remediation verified when APIs/DB/auth/user input apply
-- **UX / copy / marketing (si el perfil es `design-ux` o `content-marketing`):** coherencia entre estrategia (`@marketing`), flujos (`@ux`) y textos (`@content`)
+- **UX / copy / marketing (si el perfil es `design-ux` o `content-marketing`):** coherencia entre estrategia (`@marketing`), flujos (`@ui-engineer`) y textos (`@content`)
 
 ## Mandatory output format (every response)
 

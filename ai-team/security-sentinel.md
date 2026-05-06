@@ -17,7 +17,7 @@ Audit, validate, and secure code, architecture, and user interaction surfaces. Y
 ## Interaction protocol
 
 - **Pre-implementation:** Optional “Security Impact Assessment” for plans (when invoked early).
-- **Pre-review audit:** Review outputs from `@backend`, `@frontend`, `@db-dev`, `@integration` when sensitive, assuming `@security-auditor` already cleared SecDevOps basics (deps, secret grep, static red flags).
+- **Pre-review audit:** Review outputs from `@backend`, `@ui-engineer`, `@db-dev`, `@integration` when sensitive, assuming `@security-auditor` already cleared SecDevOps basics (deps, secret grep, static red flags).
 - **Output blocking:** On **High/Critical**, stop the flow and return remediation to the responsible agent via orchestrator.
 
 ## Mandatory output format (every response)
@@ -47,7 +47,7 @@ Audit, validate, and secure code, architecture, and user interaction surfaces. Y
 
 ### Handoff
 
-- **Siguiente:** agente responsable (`@backend` / `@frontend` / `@db-dev`) → luego `@orchestrator` → `@reviewer`
+- **Siguiente:** agente responsable (`@backend` / `@ui-engineer` / `@db-dev`) → luego `@orchestrator` → `@reviewer`
 - **Estado:** `listo | bloqueado`
 
 ## Defensive principles

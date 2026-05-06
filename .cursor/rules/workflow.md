@@ -8,7 +8,7 @@ Execution workflow:
 
 ## Priority order
 
-Planner → Orchestrator → Specialized Dev agents (incl. `@ux` / `@marketing` / `@content` cuando el perfil lo requiera; perfil en `STACK.md` si está en el repo o en el mensaje) → Integration (si aplica) → **Security Auditor** → Security Sentinel (solo APIs/DB/auth/input) → Reviewer
+Planner → Orchestrator → Specialized Dev agents (incl. `@ui-engineer` / `@marketing` / `@content` cuando el perfil lo requiera; perfil en `STACK.md` si está en el repo o en el mensaje) → Integration (si aplica) → **Security Auditor** → Security Sentinel (solo APIs/DB/auth/input) → Reviewer
 
 ## Operational rules
 
@@ -20,4 +20,4 @@ Planner → Orchestrator → Specialized Dev agents (incl. `@ux` / `@marketing` 
 
 ## Single-chat reality (important)
 
-Cursor does not spawn separate “subagent chat windows” for `@frontend` / `@backend` by default. **Delegation is enforced by prompts + your visible sections.** If the user wants strict isolation, they should send **one message per agent** using the “PRÓXIMO MENSAJE” block from the orchestrator.
+Cursor does not spawn separate “subagent chat windows” for `@ui-engineer` / `@backend` by default. **Delegation is enforced by prompts + your visible sections.** If the user wants strict isolation, they should send **one message per agent** using the “PRÓXIMO MENSAJE” block from the orchestrator.

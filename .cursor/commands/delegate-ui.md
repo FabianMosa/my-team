@@ -20,8 +20,8 @@ Opcional:
 @ui-engineer
 Objetivo: <pantalla/componente/flujo a construir>.
 Contexto: <feature/bug + restricciones>.
-Skill obligatoria: .cursor/skills/frontend/create_component.md
-Skill complementaria (si aplica): .cursor/skills/frontend/create_next_page.md
+Skill obligatoria: .cursor/skills/ui/create_component.md
+Skill complementaria (si aplica): .cursor/skills/ui/create_next_page.md
 Entradas:
 - <componentes o páginas actuales>
 - <contrato de API o estado>

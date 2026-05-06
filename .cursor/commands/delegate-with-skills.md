@@ -13,7 +13,7 @@ Estandariza handoffs para que cada rol use la skill correcta, con entregables cl
 Opcional al inicio:
 - `Perfil activo: next-tailwind` (u otro de `STACK.md`)
 - `Riesgo: bajo|medio|alto`
-- `Dominio: frontend|backend|db|styling|review|repo`
+- `Dominio: ui|backend|db|review|repo`
 
 ## Plantilla base (copiar y completar)
 
@@ -53,35 +53,20 @@ Done:
 - Sin regresiones en tests relacionados.
 ```
 
-### Frontend componente/página
+### UI componente/página
 
 ```md
-@frontend
+@ui-engineer
 Objetivo: implementar UI de <pantalla/flujo>.
-Skill obligatoria: .cursor/skills/frontend/create_component.md
-Complementaria (si aplica): .cursor/skills/frontend/create_next_page.md
+Skill obligatoria: .cursor/skills/ui/create_component.md
+Complementaria (si aplica): .cursor/skills/ui/create_next_page.md
 Salida esperada:
 - Componente/página funcional y responsive.
 - Estados loading/empty/error contemplados.
-- Integración con API o estado local según diseño.
+- Estilos aplicados con Tailwind CSS.
 Done:
 - UX usable en móvil y desktop.
-- Estructura lista para handoff a @styling.
-```
-
-### Styling Tailwind
-
-```md
-@styling
-Objetivo: aplicar sistema visual a <pantalla/componente>.
-Skill obligatoria: .cursor/skills/styling/apply_tailwind.md
-Complementaria (si aplica): .cursor/skills/styling/create_ui_pattern.md
-Salida esperada:
-- Estilos consistentes con patrón reusable.
-- Contraste y estados interactivos correctos.
-Done:
-- Responsive validado en breakpoints principales.
-- Sin romper layout existente.
+- Estructura lista para review o handoff a integracion.
 ```
 
 ### Base de datos

@@ -12,10 +12,9 @@ Instructions:
 Agents available:
 
 - planner
-- frontend
+- ui-engineer
 - backend
 - db-dev
-- styling
 - reviewer
 
 Output:
@@ -28,8 +27,7 @@ Create login system.
 
 Tasks:
 planner -> define implementation
-frontend -> login page
+ui-engineer -> login page UI y estilos
 backend -> auth endpoint
 db-dev -> user table
-styling -> design UI
 reviewer -> code review

@@ -6,7 +6,7 @@ Design an implementation plan for a feature.
 Steps:
 
 1. Identify requirements.
-2. Define frontend tasks.
+2. Define ui-engineer tasks.
 3. Define backend tasks.
 4. Define database tasks.
 5. Define testing requirements.
@@ -17,8 +17,7 @@ Feature: <name>
 
 Tasks:
 
-- frontend:
+- ui-engineer:
 - backend:
 - database:
-- styling:
 - review:

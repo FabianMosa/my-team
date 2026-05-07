@@ -59,6 +59,7 @@ Repositorio **plantilla**: reglas, skills, agentes y guardrails SecDevOps para t
 
 - Política técnica: `scripts/security-tool-middleware.mjs` y hooks en `.cursor/hooks.json`.
 - Memoria opcional **Engram**: `.cursor/mcp.json` (requiere el binario `engram` en PATH); si no está, el flujo sigue sin memoria persistente.
+- Documentación de librerías opcional **Context7**: mismo archivo `.cursor/mcp.json` — servidor `context7` con `npx -y @upstash/context7-mcp` (requiere Node.js en PATH). Sirve para APIs y ejemplos al día al implementar features; detalle en **`AGENTS.md`** (sección Context7).
 
 ## Versión
 

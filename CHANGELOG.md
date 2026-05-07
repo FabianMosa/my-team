@@ -4,6 +4,14 @@ Todas las notas relevantes por versión de la plantilla **my-team-cursor-templat
 
 El formato es inspirado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
 
+## [1.4.3] - 2026-05-07
+
+### Añadido
+
+- **`.cursor/mcp.json`**: servidor MCP **Context7** (`@upstash/context7-mcp` vía `npx`) junto a Engram.
+- **`AGENTS.md`**: fila SSOT y sección **Documentación actualizada (Context7 MCP)** (alcance, límites respecto a SecDevOps y Engram, troubleshooting).
+- **`README.md`**: mención breve de Context7 en “Seguridad y MCP”.
+
 ## [1.4.2] - 2026-04-14
 
 ### Añadido

@@ -17,6 +17,7 @@ Objetivo: **un sitio canónico por tema** y en el resto **remisiones breves**, p
 | Reglas mínimas en Cursor (no negociable) | **`.cursor/rules/dev-team.md`** | Debe remitir aquí para el detalle del pipeline; no duplicar listas largas de pasos. |
 | Política ejecutable (rutas, shell, denegaciones) | **`scripts/security-tool-middleware.mjs`** | Hooks: **`.cursor/hooks.json`** + **`.cursor/hooks/secdevops-guardrails.mjs`** (sin redefinir listas de bloqueo en markdown). |
 | Instalación, scripts `npm`, alcance “plantilla vs app” | **`README.md`** | `examples/README.md`: caso consumidor; no repetir toda la tabla de scripts salvo un resumen. |
+| Documentación en vivo de librerías (MCP Context7) | **`.cursor/mcp.json`** | `README.md` (sección MCP); no duplicar instrucciones de instalación del paquete. |
 
 **Regla práctica:** si añades un paso nuevo al pipeline o un agente, actualiza **primero** `AGENTS.md` (y `ai-team/<rol>.md` si hay definición de rol); después ajusta enlaces en `README.md`, `START_HERE.md` o `.cursor/commands/build-feature.md` solo si el flujo visible para el usuario cambia.
 
@@ -104,6 +105,22 @@ Si en el workspace está configurado **Engram** (`.cursor/mcp.json`), el orquest
 - **El servidor MCP no arranca:** comprobar que el ejecutable `engram` exista en PATH (la config usa `"command": "engram"` con args `["mcp"]`).
 - **Sin herramientas mem_:** revisar en Cursor que el MCP esté habilitado para el workspace; sin Engram no es bloqueante.
 - **Credenciales:** no guardar secretos en memoria MCP; solo decisiones de arquitectura o contexto no sensible.
+
+---
+
+## Documentación actualizada (Context7 MCP)
+
+Si en `.cursor/mcp.json` está el servidor **`context7`** (paquete `@upstash/context7-mcp` vía `npx`), el asistente puede resolver IDs de librerías y **consultar documentación reciente** (APIs, ejemplos, cambios de versión) en lugar de depender solo del conocimiento estático del modelo.
+
+- **Qué aporta al flujo de esta plantilla:** menos código obsoleto al usar `@ui-engineer`, `@backend` o `@db-dev` con stacks del **`STACK.md`** (Next.js, Prisma, Tailwind, etc.); encaja con tareas “¿cómo se hace X en la versión Y?”.
+- **Qué no sustituye:** no reemplaza **`@security-auditor`** ni **`@security-sentinel`**; las superficies sensibles siguen pasando por SecDevOps. Tampoco reemplaza **Engram** (`mem_*`): Context7 es docs; Engram es memoria de sesión/decisiones.
+- **Requisitos:** Node.js en PATH (recomendado ≥ 18) para `npx`; la primera ejecución puede descargar el paquete (necesita red).
+
+### Troubleshooting Context7
+
+- **El MCP no arranca:** comprobar `node -v` y que `npx -y @upstash/context7-mcp --help` (o equivalente) no falle por firewall/proxy corporativo.
+- **Sin herramientas Context7 en Cursor:** revisar que el servidor esté habilitado para el workspace en **Cursor Settings → MCP**.
+- **Autenticación o límites:** el binario admite `--api-key` o la variable de entorno **`CONTEXT7_API_KEY`** según la política del proveedor; si Cursor permite env por servidor, configúrala ahí en lugar de pegar claves en el chat.
 
 ---
 
